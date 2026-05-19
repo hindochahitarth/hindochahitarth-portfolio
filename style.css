@@ -143,6 +143,20 @@ body.light .glassy-nav {
   color: #08111f;
 }
 
+.btn-outline-accent {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-accent:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 .bg-accent-subtle {
   background: var(--accent-soft) !important;
 }

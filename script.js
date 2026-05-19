@@ -1,3 +1,19 @@
+// Force PDF download (prevents browser from opening it inline)
+function forceDownloadResume() {
+  fetch("Hitarth_Hindocha_1.pdf")
+    .then((res) => res.blob())
+    .then((blob) => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Hitarth_Hindocha_1.pdf";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+}
+
 const nameText = "Hi, I'm Hitarth Hindocha";
 let nameIndex = 0;
 function typeName() {
@@ -54,6 +70,13 @@ document.querySelectorAll(".fade").forEach((el) => observer.observe(el));
 
 // Dynamic Projects
 const projects = [
+  {
+    name: "BugNest – Intelligent Bug Tracking System",
+    tech: ["Java", "Spring Boot", "Spring AI", "PostgreSQL"],
+    desc: "Full-stack intelligent bug tracker with AI-driven prioritization, a dynamic Kanban board, and role-based access control for structured team collaboration.",
+    impact: "Automated bug prioritization with AI, secure JWT authentication, and reliable PostgreSQL data handling for efficient project management.",
+    link: "https://github.com/hindochahitarth/springboot-bugnest"
+  },
   {
    name: "Spoural Management System",
 tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
